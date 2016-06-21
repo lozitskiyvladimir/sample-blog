@@ -11,6 +11,7 @@ class ContactsController < ApplicationController
         render action: 'new'
       end
       @contact.save
+        
   end
 
   private
