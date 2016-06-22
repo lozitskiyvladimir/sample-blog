@@ -9,20 +9,35 @@ class ArticlesController < ApplicationController
     end
 
     def new
+      @article = Article.find(params[:id])
     end
 
     def create
         @articles  = Article.all
-        # render plain: params[:article].inspect
         @article = Article.new(article_params)
 
-        if @article.valid?
-          @article.save
+        if  @article.save
           redirect_to @article
         else
           render action: 'new'
        end
-  end
+   end
+
+   def edit
+      @article = Article.find(params[:id])
+   end
+
+   def update
+       @article = Article.find(params[:id])
+
+       if  @article.update(article_params)
+       redirect_to @article
+     else
+       render action: 'edit'
+     end
+
+   end
+
 end
 
 private
