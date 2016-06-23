@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
     end
 
     def new
-      
+
     end
 
     def create
@@ -43,9 +43,6 @@ class ArticlesController < ApplicationController
 
      @article.destroy
      redirect_to @article
-
-
-
 
    end
 
