@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
 
+  before_filter :authenticate_user!
+
     def show
       @article = Article.find(params[:id])
     end
