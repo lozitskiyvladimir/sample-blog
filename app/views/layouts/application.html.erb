@@ -11,10 +11,17 @@
 
 <!-- this is references to /users/sign_in and users/sign_out -->
 
-<%= link_to 'Sign in' , new_user_session_path %>|
+<%  if user_signed_in? %>
+
 <%= link_to 'Sign out', destroy_user_session_path , method: :delete %>
-<br/>
-<br/>
+
+<% else %>
+
+<%= link_to 'Sign in' , new_user_session_path %>|
+
+<% end %>
+
+
 
 
 
