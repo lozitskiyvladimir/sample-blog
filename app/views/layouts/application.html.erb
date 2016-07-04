@@ -5,13 +5,18 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
 <!-- this is references to /users/sign_in and users/sign_out -->
 
-<a href="/users/sign_in">Sign_in</a>|
-<a href="/users/sign_out", data-method="delete">Sign_out</a>
+<%= link_to 'Sign in' , new_user_session_path %>|
+<%= link_to 'Sign out', destroy_user_session_path , method: :delete %>
+<br/>
+<br/>
+
+
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
