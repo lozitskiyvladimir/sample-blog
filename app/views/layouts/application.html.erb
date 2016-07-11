@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+  <!-- connect Bootstrap -->
+  <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -8,7 +13,7 @@
 
 </head>
 <body>
-
+<div class="container">
 <!-- this is references to /users/sign_in and users/sign_out -->
 
 <%  if user_signed_in? %>
@@ -30,6 +35,6 @@ Hello <%= current_user.username %>|<%= link_to 'Sign out', destroy_user_session_
 
 
 <%= yield %>
-
+</div>
 </body>
 </html>
