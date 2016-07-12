@@ -2,6 +2,7 @@
 <html>
 <head>
 
+
   <!-- connect Bootstrap -->
   <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,17 +15,40 @@
 </head>
 <body>
 <div class="container">
+
+  <nav class="navbar navbar-default" role="navigation">
+			  <div class="navbar-header">
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			      <span class="sr-only">Toggle navigation</span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			    </button>
+
+			  </div>
+			  <div class="navbar-collapse collapse">
+			    <ul class="nav navbar-nav">
+			      <li><a href="/articles">Blog Rails</a></li>
+			      <li><a href="/articles/new">New</a></li>
+            <%  if user_signed_in? %>
+
+
+
+
+          <li><%= link_to "Sign out", destroy_user_session_path , method: :delete %></li>
+          <li><a href=""> hello <%= current_user.username %>!</a></li>
+            <% else %>
+
+            <li><%= link_to 'Sign in' , new_user_session_path %></li>
+
+            <% end %>
+
+			    </ul>
+
+      	</div><!--/.nav-collapse -->
+        </nav>
 <!-- this is references to /users/sign_in and users/sign_out -->
 
-<%  if user_signed_in? %>
-
-Hello <%= current_user.username %>|<%= link_to 'Sign out', destroy_user_session_path , method: :delete %>
-
-<% else %>
-
-<%= link_to 'Sign in' , new_user_session_path %>|
-
-<% end %>
 
 
 
@@ -35,6 +59,7 @@ Hello <%= current_user.username %>|<%= link_to 'Sign out', destroy_user_session_
 
 
 <%= yield %>
+
 </div>
 </body>
 </html>
