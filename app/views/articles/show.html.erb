@@ -14,7 +14,15 @@
         <i><%= comment.author %> said:</i>
         <br/>
         <br/>
-        <%= comment.body %></br>
+
+        <!-- Here I have used halper simple_format -->
+         <!-- It was before as i use truncate -->
+        <!-- <%= simple_format(comment.body) %></br> -->
+
+        <!-- Here I've added halper truncate -->
+        <%= simple_format(truncate(comment.body,length:15)) %></br>
+
+        <!-- <%= comment.body %></br> -->
         <h6><%= comment.created_at%></h6><br/>
         <hr/>
     </p>
