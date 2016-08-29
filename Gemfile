@@ -50,3 +50,9 @@ group :development do
   gem 'rubocop', require: false
 
 end
+
+group :test, :development do
+  gem "rspec-rails","~> 2.4"
+  gem "capybara"
+
+end
