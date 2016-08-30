@@ -52,7 +52,15 @@ group :development do
 end
 
 group :test, :development do
-  gem "rspec-rails","~> 2.4"
+  gem 'rspec-rails', '~> 3.5.0.beta2'
   gem "capybara"
 
+end
+
+
+#I had problem with shoulda-matchers.I've downgraded to 2.5.0. included
+#to group :test,require: false, and have written in spec_helper require "shoulda-matchers"
+#after it, It works 
+group :test do
+    gem "shoulda-matchers", "~> 2.5.0", require: false
 end
