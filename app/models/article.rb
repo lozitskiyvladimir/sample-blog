@@ -4,7 +4,12 @@ class Article < ActiveRecord::Base
   has_many :comments
   belongs_to :user
 
-  def subject 
+  def subject
     title
   end
+
+  def last_comment
+      comments.last
+  end
+
 end
