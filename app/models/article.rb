@@ -1,8 +1,15 @@
 class Article < ActiveRecord::Base
-  validates :title, presence: true
-  validates :text, presence: true
+
+
+
   has_many :comments
   belongs_to :user
+
+  validates :title, presence: true
+  validates_length_of :title, maximum: 140
+
+  validates :text, presence: true
+  validates_length_of :text, maximum: 4000
 
   def subject
     title
