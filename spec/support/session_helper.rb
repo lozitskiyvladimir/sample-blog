@@ -1,4 +1,4 @@
-def sign_up_1
+def sign_up_helper
     visit new_user_registration_path
 
     fill_in :user_email, :with => 'user@example.com'
