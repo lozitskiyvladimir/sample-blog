@@ -28,3 +28,10 @@ en:
   articles:
 
     articles_new: 'New Article:'
+
+  signed_in_users:
+    hello_name_user: 'Hello %{username}'
+    sign_up: 'Sign up:'
+
+  label_names:
+    email_label: '%{email}'  
