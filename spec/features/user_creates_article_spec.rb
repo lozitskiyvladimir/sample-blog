@@ -4,7 +4,7 @@ require 'spec_helper'
 feature "Article Creation" do
 
   before(:each) do
-    sign_up_helper
+    sign_up_visitor
 
   end
 
@@ -22,7 +22,7 @@ feature "Article Creation" do
       fill_in :article_text, :with => 'example_text'
       click_button 'Save Article'
 
-      expect(page).to have_content 'example_text'
+      expect(page).to have_content 'Add comment:'
     end
 
 
